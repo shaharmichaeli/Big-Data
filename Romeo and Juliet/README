@@ -1,0 +1,18 @@
+--- Please run the first MD cell in Producer.ipynb file to run ZooKeeper, Kafka server, and create the RomeoAndJuliet topic.
+
+Part 1:
+Files : Producer.ipynb , Consumer_Part1.ipynb
+
+Producer.ipynb - Jupyter notebook which contains pyspark code, read 'Romeo and Juliet.txt' file and split it to batches, every batch contains 100 lines and saves them to RomeoAndJuliet Kafka topic.
+
+Consumer_Part1.ipynb - Kafka consumer, read the lines from RomeoAndJuliet topic, split the lines into words, and filter them. Calculates for each batch the total sum of the semantic values and save it to the History dictionary, then plots the results.
+
+Part 2:
+Files : Producer.ipynb , Consumer_Part2.ipynb, StreamingPart2.ipynb
+
+Producer.iypnb : as written above.
+
+Consumer_Part2.ipynb: Kafka consumer, read the lines from RomeoAndJuliet topic, for each batch creates a new text file, e.g 'RandJ.part1' in part2files folder.
+
+StreamingPart2.ipynb : SparkContext DStream, listening to part2files folder under the main folder, when a new file is created, read the lines from the file, split the lines into words, and filter them. Calculates for each batch the total sum of the semantic values and save it to the History dictionary, then plots the results.
+
